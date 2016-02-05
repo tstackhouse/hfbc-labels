@@ -1,11 +1,13 @@
 {
-  "name": "angular2-quickstart",
+  "name": "hfbc-labels",
   "version": "1.0.0",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
+    "less": "catw -c 'lessc -' 'less/*.less' > generated/css/main.css",
+    "less:w": "catw -c 'lessc -' 'less/*.less' -o generated/css/main.css -v",
     "lite": "lite-server",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+    "start": "concurrent \"npm run less:w\" \"npm run tsc:w\" \"npm run lite\" "
   },
   "license": "ISC",
   "dependencies": {
@@ -15,11 +17,13 @@
     "es6-shim": "^0.33.3",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
-    "zone.js": "0.5.10"
+    "zone.js": "0.5.10",
+    "less": "~1.5.1"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
     "lite-server": "^1.3.4",
-    "typescript": "^1.7.5"
+    "typescript": "^1.7.5",
+    "catw": "~0.2.0"
   }
 }
