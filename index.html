@@ -5,9 +5,9 @@
   <head>
     <title>Hipster Fox Brewing Company - Label Generator</title>
 
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/dejavuserif_regular_macroman/stylesheet.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="static/assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="static/assets/css/dejavuserif_regular_macroman/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="generated/css/main.css" />
   </head>
 
   <!-- 3. Display the application -->
@@ -28,10 +28,13 @@
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
+        map: {
+            "app": "generated/js"
+        },
         packages: {
           app: {
             format: 'register',
-            defaultExtension: 'js'
+            defaultExtension: 'js',
           }
         }
       });

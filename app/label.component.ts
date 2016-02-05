@@ -4,7 +4,7 @@ import {RecipeService} from './recipe.service';
 
 @Component({
     selector: 'bottle-label',
-    templateUrl: 'partials/label.html',
+    templateUrl: 'static/partials/label.html',
     inputs: ['recipe']
 })
 export class LabelComponent {

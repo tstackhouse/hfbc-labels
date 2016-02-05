@@ -13,7 +13,7 @@ import {RecipeService} from './recipe.service';
 export class AppComponent {
     public selectedRecipe: Recipe = {
         id: 1,
-        name: 'The I(mperialist)PA',
+        name: 'The Imperialist',
         style: 'English IPA',
         batchCode: 2,
         brewDate: '10 Jan 2016',
