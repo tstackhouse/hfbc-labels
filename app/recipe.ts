@@ -1,4 +1,4 @@
-export interface Recipe {
+export class Recipe {
   id: number;
   name: string;
   style: string;
@@ -7,7 +7,10 @@ export interface Recipe {
   packageDate: string;
   originalGravity: number;
   finalGravity: number;
-  abv: string;
   iBUs: number;
   yeastStrain: string;
+
+  // private abv() {
+  //     return (76.08 * (this.originalGravity - this.finalGravity) / (1.775 - this.originalGravity)) * (this.finalGravity / 0.794);
+  // }
 }

@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {OnInit} from 'angular2/core';
 import {LabelComponent} from './label.component';
 import {Recipe} from './recipe';
 import {RecipeService} from './recipe.service';
@@ -10,17 +11,15 @@ import {RecipeService} from './recipe.service';
     providers: [RecipeService]
 })
 export class AppComponent {
-    public selectedRecipe: Recipe = {
-        id: 1,
-        name: 'The Imperialist',
-        style: 'English IPA',
-        batchCode: 2,
-        brewDate: '10 Jan 2016',
-        packageDate: '3 Feb 2016',
-        originalGravity: 1.074,
-        finalGravity: 1.017,
-        abv: '7.48%',
-        iBUs: 47,
-        yeastStrain: 'Wyeast 1187 Ringwood Ale'
-    };
+    selectedRecipe: Recipe;
+
+    constructor(private _recipeService: RecipeService) { }
+
+    ngOnInit() {
+        this.getRecipe();
+    }
+
+    getRecipe() {
+        this._recipeService.getRecipe().then(recipe => this.selectedRecipe = recipe);
+    }
 }
