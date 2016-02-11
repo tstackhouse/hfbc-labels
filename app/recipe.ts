@@ -10,7 +10,7 @@ export class Recipe {
   iBUs: number;
   yeastStrain: string;
 
-  // private abv() {
-  //     return (76.08 * (this.originalGravity - this.finalGravity) / (1.775 - this.originalGravity)) * (this.finalGravity / 0.794);
-  // }
+  private abv() {
+      return (76.08 * (this.originalGravity - this.finalGravity) / (1.775 - this.originalGravity)) * (this.finalGravity / 0.794);
+  }
 }
