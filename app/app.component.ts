@@ -11,15 +11,22 @@ import {RecipeService} from './recipe.service';
     providers: [RecipeService]
 })
 export class AppComponent {
-    selectedRecipe: Recipe;
+    private selectedRecipe: Recipe;
+    private _recipes: Recipe[] = new Array();
 
-    constructor(private _recipeService: RecipeService) { }
+    public constructor(private _recipeService: RecipeService) { }
 
-    ngOnInit() {
-        this.getRecipe();
+    private ngOnInit() {
+        var _this = this;
+
+        this.getRecipe().then(function() {
+            for (var i = 0; i < 6; i++) {
+                _this._recipes.push(_this.selectedRecipe);
+            }
+        });
     }
 
-    getRecipe() {
-        this._recipeService.getRecipe().then(recipe => this.selectedRecipe = recipe);
+    private getRecipe() {
+        return this._recipeService.getRecipe().then(recipe => this.selectedRecipe = recipe);
     }
 }
