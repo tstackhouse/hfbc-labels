@@ -5,10 +5,9 @@ import {RecipeService} from './recipe.service';
 
 @Component({
     selector: 'my-app',
-    template: `<section *ngFor="#a of [1,2,3,4,5,6]">
-            <bottle-label [recipe]="selectedRecipe"></bottle-label>
-        </section>`,
-    directives: [LabelComponent]
+    templateUrl: 'static/partials/app.html',
+    directives: [LabelComponent],
+    providers: [RecipeService]
 })
 export class AppComponent {
     public selectedRecipe: Recipe = {
