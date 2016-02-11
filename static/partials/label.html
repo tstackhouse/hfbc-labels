@@ -4,18 +4,24 @@
         <h2>{{recipe.style}}</h2>
     </header>
     <aside>
-        Brewed On<br />
-        {{recipe.brewDate}}<br />
-        Packaged On <br />
-        {{recipe.packageDate}}<br />
-        {{recipe.originalGravity}} OG / {{recipe.finalGravity}} FG
-    </aside>
-    <aside>
-        {{recipe.abv}} ABV<br />
-        {{recipe.iBUs}} IBUs<br />
-        Fermented Using<br />
+        Brewed On {{recipe.brewDate}} <br />
+        Original Gravity {{recipe.originalGravity}}<br />
         {{recipe.yeastStrain}}
     </aside>
+    <aside>
+        Packaged On {{recipe.packageDate}}<br />
+        Final Gravity {{recipe.finalGravity}}<br />
+        % ABV &bull; {{recipe.iBUs}} IBUs
+    </aside>
+    <!-- <aside>
+        Brewed On {{recipe.brewDate}} with an Original Gravity of
+        {{recipe.originalGravity}} and fermented with {{recipe.yeastStrain}}
+    </aside>
+    <aside>
+        Packaged On {{recipe.packageDate}} at a Final Gravity of
+        {{recipe.finalGravity}} for {{recipe.abv}} Alcohol by Volume and with
+        {{recipe.iBUs}} IBUs
+    </aside> -->
     <footer>
         <h1>The Hipster Fox Brewing Co.</h1>
         <h2>Est. 2014</h2>
