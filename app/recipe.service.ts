@@ -1,9 +1,10 @@
 import {Injectable} from 'angular2/core';
+import {Recipe} from './recipe';
 
 @Injectable()
 export class RecipeService {
     getRecipe() {
-        return Promise.resolve({
+        return Promise.resolve(new Recipe({
             id: 1,
             name: 'The Imperialist',
             style: 'English IPA',
@@ -14,6 +15,6 @@ export class RecipeService {
             finalGravity: 1.020,
             iBUs: 47,
             yeastStrain: 'Wyeast 1187 Ringwood Ale'
-        });
+        }));
     }
 }

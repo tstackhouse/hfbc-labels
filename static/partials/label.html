@@ -10,8 +10,8 @@
     </aside>
     <aside>
         Packaged On {{recipe.packageDate}}<br />
-        {{recipe.abv()}}% ABV &bull; {{recipe.iBUs}} IBUs
         Final Gravity {{recipe.finalGravity | number:'.3'}}<br />
+        {{recipe.abv | number:'.0-1'}}% ABV &bull; {{recipe.iBUs}} IBUs
     </aside>
     <!-- <aside>
         Brewed On {{recipe.brewDate}} with an Original Gravity of
