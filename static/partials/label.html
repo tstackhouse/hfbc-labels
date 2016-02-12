@@ -5,13 +5,13 @@
     </header>
     <aside>
         Brewed On {{recipe.brewDate}} <br />
-        Original Gravity {{recipe.originalGravity}}<br />
+        Original Gravity {{recipe.originalGravity | number:'.3'}}<br />
         {{recipe.yeastStrain}}
     </aside>
     <aside>
         Packaged On {{recipe.packageDate}}<br />
-        Final Gravity {{recipe.finalGravity}}<br />
         {{recipe.abv()}}% ABV &bull; {{recipe.iBUs}} IBUs
+        Final Gravity {{recipe.finalGravity | number:'.3'}}<br />
     </aside>
     <!-- <aside>
         Brewed On {{recipe.brewDate}} with an Original Gravity of
