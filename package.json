@@ -7,18 +7,20 @@
     "less": "catw -c 'lessc -' 'less/*.less' > generated/css/main.css",
     "less:w": "catw -c 'lessc -' 'less/*.less' -o generated/css/main.css -v",
     "lite": "lite-server",
-    "start": "concurrent \"npm run less:w\" \"npm run tsc:w\" \"npm run lite\" "
+    "dev": "concurrent \"npm run less:w\" \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "http-server -p 80 -i false -d false -r"
   },
   "license": "ISC",
   "dependencies": {
     "angular2": "2.0.0-beta.2",
-    "systemjs": "0.19.6",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
+    "http-server": "^0.9.0",
+    "less": "~1.5.1",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
-    "zone.js": "0.5.10",
-    "less": "~1.5.1"
+    "systemjs": "0.19.6",
+    "zone.js": "0.5.10"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
