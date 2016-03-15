@@ -8,7 +8,7 @@
     "less:w": "catw -c 'lessc -' 'less/*.less' -o generated/css/main.css -v",
     "lite": "lite-server",
     "dev": "concurrent \"npm run less:w\" \"npm run tsc:w\" \"npm run lite\" ",
-    "start": "http-server -p 80 -i false -d false -r"
+    "start": "http-server -i false -d false -r"
   },
   "license": "ISC",
   "dependencies": {
