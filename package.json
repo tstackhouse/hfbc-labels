@@ -4,7 +4,7 @@
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "less": "catw -c 'lessc -' 'less/*.less' > generated/css/main.css",
+    "less": "lessc less/*.less > generated/css/main.css",
     "less:w": "catw -c 'lessc -' 'less/*.less' -o generated/css/main.css -v",
     "lite": "lite-server",
     "server": "http-server -i false -d false -r",
