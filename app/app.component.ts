@@ -10,6 +10,7 @@ import {RecipeService} from './recipe.service';
     providers: [RecipeService]
 })
 export class AppComponent {
+    private knownRecipes: Recipe[] = new Array();
     private selectedRecipe: Recipe;
     private _recipes: Recipe[] = new Array();
 
@@ -23,6 +24,18 @@ export class AppComponent {
                 _this._recipes.push(_this.selectedRecipe);
             }
         });
+
+        this.getRecipes().then(function() {
+            console.log(_this.knownRecipes);
+        });
+    }
+
+    private log(item) {
+        console.log(item);
+    }
+
+    private getRecipes() {
+        return this._recipeService.getRecipes().then(recipes => this.knownRecipes = recipes);
     }
 
     private getRecipe() {

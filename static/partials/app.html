@@ -1,3 +1,11 @@
+<nav>
+    <ul>
+        <li *ngFor="#item of knownRecipes">
+            <span class="badge">{{item.id}}</span> {{item.name}}
+        </li>
+    </ul>
+</nav>
+
 <section *ngFor="#r of _recipes">
     <bottle-label [recipe]="r"></bottle-label>
 </section>

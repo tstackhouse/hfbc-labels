@@ -1,3 +1,4 @@
+import {RECIPES} from './mock-recipes';
 import {Injectable} from 'angular2/core';
 import {Recipe} from './recipe';
 
@@ -16,5 +17,16 @@ export class RecipeService {
             iBUs: 47,
             yeastStrain: 'Wyeast 1187 Ringwood Ale'
         }));
+    }
+
+    getRecipes() {
+        var recipes: Recipe[] = new Array();
+
+        RECIPES.forEach((rec) => {
+            console.log(rec);
+            recipes.push(new Recipe(rec));
+        });
+
+        return Promise.resolve(recipes);
     }
 }
