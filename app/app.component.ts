@@ -12,26 +12,20 @@ import {RecipeService} from './recipe.service';
 export class AppComponent {
     private knownRecipes: Recipe[] = new Array();
     private selectedRecipe: Recipe;
-    private _recipes: Recipe[] = new Array();
-
+    private numLabels = new Array(6);
+    
     public constructor(private _recipeService: RecipeService) { }
 
     private ngOnInit() {
         var _this = this;
 
-        this.getRecipe().then(function() {
-            for (var i = 0; i < 6; i++) {
-                _this._recipes.push(_this.selectedRecipe);
-            }
-        });
-
         this.getRecipes().then(function() {
-            console.log(_this.knownRecipes);
+            _this.onSelect(_this.knownRecipes[0]);
         });
     }
 
-    private log(item) {
-        console.log(item);
+    private onSelect(recipe) {
+        this.selectedRecipe = recipe;
     }
 
     private getRecipes() {
