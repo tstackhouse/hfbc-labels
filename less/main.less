@@ -163,16 +163,41 @@ footer {
 }
 
 @media screen {
+    body {
+	width: 960px;
+	margin: auto;
+    }
+
     nav {
+	float: left;
+	width: 300px;
+	margin: 100px 10px 10px;
 	
+	li {
+	    border: 1px solid #666;
+	    border-radius: 5px;
+	    margin: 10px;
+	    padding: 10px;
+	    cursor: pointer;
+	}
     }
 
     bottle-label {
+	float: left;
+	width: 618px;
+	margin: 10px;
+	border: 1px solid #666;
+	border-radius: 5px;
+
 	display: none;
 	&:first-of-type {
 	    display: block;
 	}
     }    
+    
+    article {
+	margin: 61px;
+    }
 }
 
 @media print {
