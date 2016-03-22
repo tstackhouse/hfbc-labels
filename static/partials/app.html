@@ -1,7 +1,13 @@
 <nav>
     <ul>
         <li *ngFor="#recipe of knownRecipes" (click)="onSelect(recipe)">
-            <span class="badge">{{recipe.id}}</span> {{recipe.name}}
+            <header>{{recipe.name}}</header>
+	    {{recipe.style}}<br />
+            {{recipe.brewDate}} | {{recipe.packageDate}}<br />
+            OG {{recipe.originalGravity | number:'.3'}} | FG {{recipe.finalGravity | number:'.3'}}<br />
+            {{recipe.abv | number:'.0-1'}}% ABV | {{recipe.iBUs}} IBUs<br />
+            {{recipe.yeastStrain}}<br />
+	    <footer>Batch {{recipe.batchCode}}</footer>
         </li>
     </ul>
 </nav>
