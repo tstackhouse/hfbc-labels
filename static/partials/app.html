@@ -6,6 +6,4 @@
     </ul>
 </nav>
 
-<section *ngFor="#i of numLabels">
-    <bottle-label [recipe]="selectedRecipe"></bottle-label>
-</section>
+<bottle-label *ngFor="#_r of _recipes" [recipe]="_r"></bottle-label>

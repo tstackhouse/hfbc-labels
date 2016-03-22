@@ -12,7 +12,7 @@ import {RecipeService} from './recipe.service';
 export class AppComponent {
     private knownRecipes: Recipe[] = new Array();
     private selectedRecipe: Recipe;
-    private numLabels = new Array(6);
+    private _recipes: Recipe[] = new Array();
     
     public constructor(private _recipeService: RecipeService) { }
 
@@ -26,6 +26,7 @@ export class AppComponent {
 
     private onSelect(recipe) {
         this.selectedRecipe = recipe;
+	this.populateLabels();
     }
 
     private getRecipes() {
@@ -34,5 +35,12 @@ export class AppComponent {
 
     private getRecipe() {
         return this._recipeService.getRecipe().then(recipe => this.selectedRecipe = recipe);
+    }
+
+    private populateLabels() {
+	this._recipes = new Array();
+	for (var i = 0; i < 6; i++) {
+            this._recipes.push(this.selectedRecipe);
+        }
     }
 }
